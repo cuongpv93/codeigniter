@@ -1,0 +1,44 @@
+input[type=text] {
+    width: 30%;
+    padding: 10px 10px;
+    margin: 8px 30px;
+    box-sizing: border-box;
+    border: 2px solid red;
+    border-radius: 4px;
+	display:block;
+}
+
+#button {
+	background-color: #ff00ff;
+    padding: 10px 25px;
+    margin: 15px 30px;
+	display:inline;
+}
+
+#button:hover{
+	background-color: red;
+}
+
+header h1{
+	text-align: center;
+	color: #ffff33;
+	background-color:#33cccc;
+	display: block;
+	margin: 0px;
+	margin-bottom: 40px;
+	padding: 30px;
+}
+
+body {
+	font-family: Time New Roman;
+	font-size: 16px;
+}
+
+label{
+	margin-left:30px;
+}
+
+#giatri{
+	position: absolute;
+	left: 200px;
+}
