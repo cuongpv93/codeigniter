@@ -28,7 +28,7 @@ class Home extends CI_Controller
                     }
                 }
                 if ($checkemail) {
-                    header("Location: http://localhost/cuongpv/school/sinhvien/showlist");
+                    header("Location: http://localhost/school_manager/sinhvien/showlist");
                 } else {
                     echo '<script type="text/javascript">alert("Dang nhap khong thanh cong! Sai tai khoan hoac mat khau.");</script>';
                 }
@@ -67,7 +67,7 @@ class Home extends CI_Controller
                         'password' => $password,
                         );
                     $this->db->insert('user',$info);
-                    echo "<script> alert('Dang ki thanh cong!'); window.location.href='http://localhost/cuongpv/school/home/login';</script>";
+                    echo "<script> alert('Dang ki thanh cong!'); window.location.href='http://localhost/school_manager/home/login';</script>";
                 } else {
                     echo '<script type="text/javascript">alert("Tai khoan da ton tai!");</script>';
                 }
