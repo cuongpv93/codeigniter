@@ -1,0 +1,119 @@
+body {
+	background: url(http://www.planwallpaper.com/static/images/background-wallpapers-32_NRz0mTd.jpg) no-repeat center center fixed;
+	  -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+}
+
+h1{
+	margin-top: 30px;
+	font-family: Arial;
+	text-align: center;
+	color: white;
+}
+
+#icon{
+	margin: 0 auto;
+	margin-top: 20px;
+	display: block;
+	width: 12%;
+}
+
+
+.container{
+	margin: 0 auto;
+	width:20%;
+	margin-top: 20px;
+	padding: 15px;
+	border: 3px solid #f1f1f1;
+	border-radius:5px;
+
+}
+
+div.login_form{
+	margin: 20px;
+	display: block;
+}
+
+label{
+	color: white;
+	font-size: 20px;
+}
+
+
+input{
+	background: #99ccff;
+	padding: 12px 20px;
+	-webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border:none;
+    margin: 10px 0px;
+    box-shadow: inset 0px 2px 3px rgba( 0,0,0,0.5 );
+}
+
+input:focus{
+	background: #fff;
+    box-shadow: 0px 0px 0px 3px #99ccff, inset 0px 2px 3px rgba( 0,0,0,0.2 ), 0px 5px 5px rgba( 0,0,0,0.15 );
+    outline: none;
+}
+
+a:link,a:visited,a:hover,a:active{
+	text-decoration: none;
+	color: white;
+}
+
+.button{
+	margin: 10px 10px;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	font-style:normal;
+	color: #ffffff;
+	padding: 10px 16px;
+	background: -moz-linear-gradient(
+		center top,
+		#3d94f6 5%,
+		#1e62d0 100%);
+	background: -webkit-gradient(
+		linear, left top, left bottom,
+		color-stop(0.05, #3d94f6),
+		color-stop(1, #1e62d0));
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	border: 1px solid #337fed;
+	-moz-box-shadow:inset 0px 1px 0px 0px #97c4fe;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #97c4fe;
+	box-shadow:inset 0px 1px 0px 0px #97c4fe;
+	outline:none;
+	display: inline;
+}
+
+.button:hover{
+	background:-webkit-gradient( 
+		linear, left top, left bottom, 
+		color-stop(0.05, #1e62d0),
+		color-stop(1, #3d94f6) );
+	background:-moz-linear-gradient( center top, 
+		#1e62d0 5%,
+		#3d94f6 100% );
+	background-color:#1e62d0;
+}
+
+.button:active{
+
+	position:relative;
+	top:1px;
+}
+
+div.hide{
+	height: 20px;
+	width: 20px;
+	padding: 0px;
+	margin: 0px;
+	font-size: 16px;
+	color: red;	
+}
+
