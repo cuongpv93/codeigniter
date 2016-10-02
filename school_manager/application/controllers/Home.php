@@ -8,82 +8,78 @@ class Home extends CI_Controller
     {
         $this->load->model("User_model");
         $data["user"]=$this->User_model->listuser();
-        if($this->input->post('login') && $this->input->post('username') && $this->input->post('password')){
-            $email = $this->input->post('username');
-            $password = $this->input->post('password');
-            $emailpt = "/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/";
-            $passpt = "/^[A-Za-z]\w{7,14}$/";
-            if (!preg_match($emailpt, $email)) {
-                echo '<script type="text/javascript">alert("Tai khoan khong dung dinh dang!");</script>';
-            }
-            if (!preg_match($passpt, $password)) {
-                echo '<script type="text/javascript">alert("Mat khau khong dung dinh dang!");</script>';
-            }
-            if (preg_match($emailpt, $email) && preg_match($passpt, $password)) {
-               $checkemail = 0;
-                foreach ($data as $key => $value) {
-                    foreach ($value as $key => $value) {
-                        if($email == $value['email']&& $password == $value['password'])
-                            $checkemail = 1;
-                    }
-                }
-                if ($checkemail) {
-                    header("Location: http://localhost/school_manager/sinhvien/showlist");
-                } else {
-                    echo '<script type="text/javascript">alert("Dang nhap khong thanh cong! Sai tai khoan hoac mat khau.");</script>';
-                }
-            }            
-        }  
+        if($this->input->post('username')&& $this->input->post('password')){
+            header("Location: http://localhost/cuongpv/school/sinhvien/showlist");
+        }
         $this->load->view('frontend/layout/login_form');
     }
 
     public function register()
     {
-    	$this->load->model("User_model");
-    	$data["user"]=$this->User_model->listuser();
-    	
-        if($this->input->post('register') && $this->input->post('username') && $this->input->post('password')){
+        if($this->input->post('username')&& $this->input->post('password')){
             $email = $this->input->post('username');
             $password = $this->input->post('password');
-            $emailpt = "/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/";
-            $passpt = "/^[A-Za-z]\w{7,14}$/";
-            if (!preg_match($emailpt, $email)) {
-                echo '<script type="text/javascript">alert("Tai khoan khong dung dinh dang!");</script>';
-            }
-            if (!preg_match($passpt, $password)) {
-                echo '<script type="text/javascript">alert("Mat khau khong dung dinh dang!");</script>';
-            }
-            if (preg_match($emailpt, $email) && preg_match($passpt, $password)) {
-               $checkemail = 1;
-                foreach ($data as $key => $value) {
-                    foreach ($value as $key => $value) {
-                        if($email == $value['email'])
-                            $checkemail = 0;
-                    }
-                }
-                if ($checkemail) {
-                        $info = array(
+            $info = array(
                         'email' => $email, 
                         'password' => $password,
                         );
-                    $this->db->insert('user',$info);
-                    echo "<script> alert('Dang ki thanh cong!'); window.location.href='http://localhost/school_manager/home/login';</script>";
-                } else {
-                    echo '<script type="text/javascript">alert("Tai khoan da ton tai!");</script>';
-                }
-            }            
-        }  
-        $this->load->view('frontend/layout/register');     
+            $this->db->insert('user',$info);
+            echo "<script> window.location.href='http://localhost/cuongpv/school/home/login';</script>";
+        }
+        $this->load->view('frontend/layout/register'); 
     }
-
-    public function test_ajax(){
-        
-    }
-
-    public function printdata(){
+    public function checkemail(){
         $this->load->model("User_model");
-        $data=$this->User_model->listuser();
-        die(json_encode($data));
+        $data["user"] = $this->User_model->listuser();
+        $email = $_POST["email"];
+        $emailok = 1;
+        $emailpt = "/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/";
+        if(!preg_match($emailpt,$email)){
+            echo "Email is not valid!";
+        } else {
+            foreach ($data as $key => $value) {
+                foreach ($value as $key => $value) {
+                    if ($email == $value["email"]) {
+                        $emailok = 0;
+                    }
+                }
+                if ($emailok) {
+                    echo "You can use this email!";
+                } else {
+                    echo "This email already exist!";
+                }
+            }
+        }
+    }
+
+    public function checkpassword(){
+        $password = $_POST["password"];
+        $passwordpt = "/^(?=.*[A-Z])[0-9a-zA-Z]{6,}$/";
+        if (!preg_match($passwordpt,$password)) {
+            echo "Pass word must atleast 6 characters and 1 uppercase letter";
+        } else {
+            echo "Password is fine";
+        }
+    }
+
+    public function checklogin(){
+        $this->load->model("User_model");
+        $data["user"] = $this->User_model->listuser();
+        $email = $_POST["email"];
+        $password = $_POST["password"];
+        $accountok = 0;
+        foreach ($data as $key => $value) {
+            foreach ($value as $key => $value) {
+                if ($email == $value["email"] && $password == $value["password"]) {
+                    $accountok = 1;
+                }
+            }
+        }
+       echo $accountok;
+    }
+
+    public function test(){
+
     }
 }
 ?>
