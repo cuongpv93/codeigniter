@@ -1,6 +1,6 @@
 <?php
 if (!defined('BASEPATH')) exit('No direct script access allowed');
-	class Sinhvien extends CI_Controller
+	class Student extends CI_Controller
 	{
 		
 		public function __construct()
@@ -30,11 +30,11 @@ if (!defined('BASEPATH')) exit('No direct script access allowed');
 					'diem' => $diem,
 					);
 				$this->db->insert('sinhvien',$data);
-				header("Location: http://localhost/school_manager/sinhvien/showlist");
+				header("Location: http://cuongpham.freevnn.com/cuongpv/school_manager/student/showlist");
 			}
 			if($this->input->post('back'))
 			{
-				header("Location: http://localhost/school_manager/sinhvien/showlist");
+				header("Location: http://cuongpham.freevnn.com/cuongpv/school_manager/student/showlist");
 			}
 			$this->load->view('frontend/layout/addstudent');
 		}
@@ -45,7 +45,7 @@ if (!defined('BASEPATH')) exit('No direct script access allowed');
 			$data['sinhvien']=$this->db->select('*')->from('sinhvien')->where(array('sid'=>$id))->get()->row_array();
 			if(count($data['sinhvien']) ==0)
 				{
-					header("Location: http://localhost/school_manager/sinhvien/showlist");
+					header("Location: http://cuongpham.freevnn.com/cuongpv/school_manager/student/showlist");
 					die;
 				}
 			if($this->input->post('edit')){
@@ -60,10 +60,10 @@ if (!defined('BASEPATH')) exit('No direct script access allowed');
 						'diem' => $diem,
 					);
 				$this->db->where('sid',$id)->update('sinhvien',$data);
-				header("Location: http://localhost/school_manager/sinhvien/showlist");
+				header("Location: http://cuongpham.freevnn.com/cuongpv/school_manager/student/showlist");
 			}
 			if($this->input->post('back')){
-				header("Location: http://localhost/school_manager/sinhvien/showlist");
+				header("Location: http://cuongpham.freevnn.com/cuongpv/school_manager/student/showlist");
 			}
 			$this->load->view('frontend/layout/editstudent',$data);
 		}
@@ -74,17 +74,17 @@ if (!defined('BASEPATH')) exit('No direct script access allowed');
 			$data['sinhvien']=$this->db->select('*')->from('sinhvien')->where(array('sid'=>$id))->get()->row_array();
 			if(count($data['sinhvien']) ==0)
 				{
-					header("Location: http://localhost/school_manager/sinhvien/showlist");
+					header("Location: http://cuongpham.freevnn.com/cuongpv/school_manager/student/showlist");
 					die;
 				}
 			if($this->input->post('delete'))
 			{
 				$this->db->delete('sinhvien',array('sid' =>$id) );
-				header("Location: http://localhost/school_manager/sinhvien/showlist");
+				header("Location: http://cuongpham.freevnn.com/cuongpv/school_manager/student/showlist");
 			}
 			if($this->input->post('back'))
 			{
-				header("Location: http://localhost/school_manager/sinhvien/showlist");
+				header("Location: http://cuongpham.freevnn.com/cuongpv/school_manager/student/showlist");
 			}
 			$this->load->view('frontend/layout/deletestudent',$data);
 		}

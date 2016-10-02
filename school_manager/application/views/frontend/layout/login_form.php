@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta author="Cuong PV" />
-	<base href="<?php echo "http://localhost/cuongpv/school/";?>"></base>
+	<base href="<?php echo "http://cuongpham.freevnn.com/cuongpv/school_manager/";?>"></base>
 	<link rel="stylesheet" href="public/template/frontend/layout/css/reset.css" type="text/css" />
 	<link rel="stylesheet" href="public/template/frontend/layout/css/login.css" type="text/css" />
 	<script src="public/template/frontend/layout/css/sweetalert.min.js"></script>
@@ -28,12 +28,12 @@
 			<script type="text/javascript">
 
 				$("#register").click(function(){
-					window.location.href='http://localhost/cuongpv/school/home/register';
+					window.location.href='http://cuongpham.freevnn.com/cuongpv/school_manager/home/register';
 				});
 
 				$("#log_in").click(function(){
 					$.ajax({
-                        url: "http://localhost/cuongpv/school/home/checklogin",
+                        url: "http://cuongpham.freevnn.com/cuongpv/school_manager/home/checklogin",
                         type: "post",
                         dataType: "text",
                         data: {

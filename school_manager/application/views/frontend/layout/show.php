@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta author="Cuong PV" />
-	<base href="<?php echo "http://localhost/school_manager/";?>"></base>
+	<base href="<?php echo "http://cuongpham.freevnn.com/cuongpv/school_manager/";?>"></base>
 	<link rel="stylesheet" href="public/template/frontend/layout/css/reset.css" type="text/css" />
 	<link rel="stylesheet" href="public/template/frontend/layout/css/home.css" type="text/css" />
 	<title>Danh sách sinh viên</title>
@@ -17,9 +17,9 @@
 <div class="dropdown">
   <button class="dropbtn">Menu</button>
   <div class="dropdown-content">
-    <a href="http://localhost/cuongpv/school/sinhvien/addstudent">Thêm sinh viên</a>
-    <a href="http://localhost/cuongpv/school/sinhvien/thongtin">Thông tin chi tiết</a>
-    <a href="http://localhost/cuongpv/school/sinhvien/danhsach">Danh sách qua môn</a>
+    <a href="http://cuongpham.freevnn.com/cuongpv/school_manager/student/addstudent">Thêm sinh viên</a>
+    <a href="http://cuongpham.freevnn.com/cuongpv/school_manager/student/thongtin">Thông tin chi tiết</a>
+    <a href="http://cuongpham.freevnn.com/cuongpv/school_manager/student/danhsach">Danh sách qua môn</a>
   </div>
 </div>
 <table>
@@ -40,7 +40,7 @@
 				<td><?php echo $value['mssv'] ?></td>
 				<td><?php echo $value['lop'] ?></td>
 				<td><?php echo $value['diem'] ?></td>
- 				<th><?php echo '<a href="http://localhost/cuongpv/school/sinhvien/deletestudent/'.$value['sid'].'">Delete</a>' ?> -   <?php echo '<a href="http://localhost/cuongpv/school/sinhvien/editstudent/'.$value['sid'].'">Edit</a>' ?>     </th>
+ 				<th><?php echo '<a href="http://cuongpham.freevnn.com/cuongpv/school_manager/student/deletestudent/'.$value['sid'].'">Delete</a>' ?> -   <?php echo '<a href="http://cuongpham.freevnn.com/cuongpv/school_manager/student/editstudent/'.$value['sid'].'">Edit</a>' ?>     </th>
 			</tr>
 			<?php
 		}
@@ -50,7 +50,7 @@
 
 </section>
 <footer>
-	<h1> <a href="http://localhost/cuongpv/school/giaovien/show">TRANG QUẢN LÝ GIÁO VIÊN</a></h1>
+	<h1> <a href="http://cuongpham.freevnn.com/cuongpv/school_manager/teacher/show">TRANG QUẢN LÝ GIÁO VIÊN</a></h1>
 </footer>
 </body>
 </html>

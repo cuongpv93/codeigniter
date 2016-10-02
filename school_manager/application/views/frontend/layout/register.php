@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta author="Cuong PV" />
-	<base href="<?php echo "http://localhost/cuongpv/school/";?>"></base>
+	<base href="<?php echo "http://cuongpham.freevnn.com/cuongpv/school_manager/";?>"></base>
 	<link rel="stylesheet" href="public/template/frontend/layout/css/reset.css" type="text/css" />
 	<link rel="stylesheet" href="public/template/frontend/layout/css/register.css" type="text/css" />
     <script src="public/template/frontend/layout/css/sweetalert.min.js"></script>
@@ -27,7 +27,7 @@
 			<script type="text/javascript">
             $('#user').keyup(function(){
                     $.ajax({
-                        url: "http://localhost/cuongpv/school/home/checkemail",
+                        url: "http://cuongpham.freevnn.com/cuongpv/school_manager/home/checkemail",
                         type: "post",
                         dataType: "text",
                         data: {
@@ -41,7 +41,7 @@
 
             $('#pass').keyup(function(){
                     $.ajax({
-                        url: "http://localhost/cuongpv/school/home/checkpassword",
+                        url: "http://cuongpham.freevnn.com/cuongpv/school_manager/home/checkpassword",
                         type: "post",
                         dataType: "text",
                         data: {
@@ -55,7 +55,7 @@
 
             $('#click').click(function(){
                  $.ajax({
-                        url: "http://localhost/cuongpv/school/home/checkemail",
+                        url: "http://cuongpham.freevnn.com/cuongpv/school_manager/home/checkemail",
                         type: "post",
                         dataType: "text",
                         data: {

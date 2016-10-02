@@ -1,6 +1,6 @@
 <?php
 if (!defined('BASEPATH')) exit('No direct script access allowed');
-class Giaovien extends CI_Controller
+class Teacher extends CI_Controller
 {
 	public function __construct()
 		{
@@ -23,11 +23,11 @@ class Giaovien extends CI_Controller
 					'lop' => $lop,
 					);
 				$this->db->insert('giaovien',$data);
-				header("Location: http://localhost/school_manager/giaovien/show");
+				header("Location: http://cuongpham.freevnn.com/cuongpv/school_manager/teacher/show");
 			}
 		if($this->input->post('back'))
 			{
-				header("Location: http://localhost/school_manager/giaovien/show");
+				header("Location: http://cuongpham.freevnn.com/cuongpv/school_manager/teacher/show");
 			}
 		$this->load->view('frontend/layout/addteacher');
 	}
@@ -37,17 +37,17 @@ class Giaovien extends CI_Controller
 		$data['giaovien']=$this->db->select('*')->from('giaovien')->where(array('tid'=>$id))->get()->row_array();
 		if(count($data['giaovien']) ==0)
 				{
-					header("Location:http://localhost/school_manager/giaovien/show");
+					header("Location:http://cuongpham.freevnn.com/cuongpv/school_manager/teacher/show");
 					die;
 				}
 		if($this->input->post('delete'))
 			{
 				$this->db->delete('giaovien',array('tid' =>$id) );
-				header("Location: http://localhost/school_manager/giaovien/show");
+				header("Location: http://cuongpham.freevnn.com/cuongpv/school_manager/teacher/show");
 			}
 		if($this->input->post('back'))
 			{
-				header("Location: http://localhost/school_manager/giaovien/show");
+				header("Location: http://cuongpham.freevnn.com/cuongpv/school_manager/teacher/show");
 			}
 		$this->load->view('frontend/layout/deleteteacher',$data);
 	}
@@ -57,7 +57,7 @@ class Giaovien extends CI_Controller
 		$data['giaovien']=$this->db->select('*')->from('giaovien')->where(array('tid'=>$id))->get()->row_array();
 		if(count($data['giaovien']) ==0)
 				{
-					header("Location: http://localhost/school_manager/giaovien/show");
+					header("Location: http://cuongpham.freevnn.com/cuongpv/school_manager/teacher/show");
 					die;
 				}
 		if($this->input->post('edit')){
@@ -68,10 +68,10 @@ class Giaovien extends CI_Controller
 						'lop' => $lop,
 					);
 				$this->db->where('tid',$id)->update('giaovien',$data);
-				header("Location: http://localhost/school_manager/giaovien/show");
+				header("Location: http://cuongpham.freevnn.com/cuongpv/school_manager/teacher/show");
 			}
 		if($this->input->post('back')){
-				header("Location: http://localhost/school_manager/giaovien/show");
+				header("Location: http://cuongpham.freevnn.com/cuongpv/school_manager/teacher/show");
 			}
 		$this->load->view('frontend/layout/editteacher',$data);
 	}

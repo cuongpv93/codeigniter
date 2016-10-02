@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta author="Cuong PV" />
-	<base href="<?php echo "http://localhost/school_manager/";?>"></base>
+	<base href="<?php echo "http://cuongpham.freevnn.com/cuongpv/school_manager/";?>"></base>
 	<link rel="stylesheet" href="public/template/frontend/layout/css/reset.css" type="text/css" />
 	<link rel="stylesheet" href="public/template/frontend/layout/css/home.css" type="text/css" />
 	<title>Danh sách qua môn</title>
