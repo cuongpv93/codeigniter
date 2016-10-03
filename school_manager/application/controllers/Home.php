@@ -78,6 +78,10 @@ class Home extends CI_Controller
        echo $accountok;
     }
 
+	public function helloworld(){
+        $this->load->view("frontend/layout/helloworld");
+    }
+	
     public function test(){
 
     }
