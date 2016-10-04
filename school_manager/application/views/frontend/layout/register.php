@@ -34,7 +34,12 @@
                             email : $("#user").val()
                         },               
                         success: function(result){
-                            $("#user_status").html(result);
+                            if(result == 1){
+                                $("#user_status").html("");
+                            } 
+                             else {
+                                $("#user_status").html("Cannot use this email");
+                            }
                         }
                     });                  
             });
@@ -48,21 +53,25 @@
                             password : $("#pass").val()
                         },               
                         success: function(result){
-                            $("#password_status").html(result);
+                            if(result == 1){
+                                $("#user_status").html("");
+                            } else {
+                                $("#user_status").html("Password not valid");
+                            }
                         }
                     });                  
             });
 
             $('#click').click(function(){
                  $.ajax({
-                        url: "http://cuongpham.freevnn.com/cuongpv/school_manager/home/checkemail",
+                        url: "http://cuongpham.freevnn.com/cuongpv/school_manager/home/checkregister",
                         type: "post",
                         dataType: "text",
                         data: {
                             email : $("#user").val()
                         },               
                         success: function(result){
-                            if(result == "You can use this email!") {
+                            if(result == 1) {
                                 swal("Success!", "Register success!", "success");
                                 setTimeout(function(){
                                     $("#form").submit();

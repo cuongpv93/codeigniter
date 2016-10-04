@@ -44,9 +44,9 @@ class Home extends CI_Controller
                     }
                 }
                 if ($emailok) {
-                    echo "You can use this email!";
+                    echo "1";
                 } else {
-                    echo "This email already exist!";
+                    echo "0";
                 }
             }
         }
@@ -56,9 +56,9 @@ class Home extends CI_Controller
         $password = $_POST["password"];
         $passwordpt = "/^(?=.*[A-Z])[0-9a-zA-Z]{6,}$/";
         if (!preg_match($passwordpt,$password)) {
-            echo "Pass word must atleast 6 characters and 1 uppercase letter";
+            echo "0";
         } else {
-            echo "Password is fine";
+            echo "1";
         }
     }
 
@@ -76,6 +76,30 @@ class Home extends CI_Controller
             }
         }
        echo $accountok;
+    }
+	
+	    public function checkregister(){
+        $this->load->model("User_model");
+        $data["user"] = $this->User_model->listuser();
+        $email = $_POST["email"];
+        $emailok = 1;
+        $emailpt = "/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/";
+        if(!preg_match($emailpt,$email)){
+            echo "Email is not valid!";
+        } else {
+            foreach ($data as $key => $value) {
+                foreach ($value as $key => $value) {
+                    if ($email == $value["email"]) {
+                        $emailok = 0;
+                    }
+                }
+                if ($emailok) {
+                    echo "1";
+                } else {
+                    echo "0";
+                }
+            }
+        }
     }
 
 	public function helloworld(){
