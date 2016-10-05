@@ -9,7 +9,7 @@ class Home extends CI_Controller
         $this->load->model("User_model");
         $data["user"]=$this->User_model->listuser();
         if($this->input->post('username')&& $this->input->post('password')){
-            header("Location: http://localhost/cuongpv/school/sinhvien/showlist");
+            header("Location: http://cuongpham.freevnn.com/cuongpv/school_manager/sinhvien/showlist");
         }
         $this->load->view('frontend/layout/login_form');
     }
@@ -24,7 +24,7 @@ class Home extends CI_Controller
                         'password' => $password,
                         );
             $this->db->insert('user',$info);
-            echo "<script> window.location.href='http://localhost/cuongpv/school/home/login';</script>";
+            echo "<script> window.location.href='http://cuongpham.freevnn.com/cuongpv/school_managerhome/login';</script>";
         }
         $this->load->view('frontend/layout/register'); 
     }
@@ -105,6 +105,12 @@ class Home extends CI_Controller
 	public function helloworld(){
         $this->load->view("frontend/layout/helloworld");
     }
+	
+	public function shiftjis(){
+        $data["name"] = $this->db->select('*')->from('shiftjis')->get()->result_array();
+        $this->load->view("frontend/layout/shiftjis",$data);
+    }
+
 	
     public function test(){
 
