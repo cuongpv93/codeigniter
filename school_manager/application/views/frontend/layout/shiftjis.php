@@ -19,15 +19,18 @@
 				<tr>
 					<th>#</th>
 					<th>名前</th>
+					<th>Action</th>
 				</tr>
 			</thead>
 			<?php foreach ($name as $key => $value) { ?>
 			<tr>
 				<td><?php echo $value['id'] ?></td>
 				<td><?php echo $value['名前'] ?></td>
+				<th><?php echo '<a href="http://cuongpham.freevnn.com/cuongpv/school_manager/home/deletejis/'.$value['id'].'">Delete</a>' ?> -   <?php echo '<a href="http://cuongpham.freevnn.com/cuongpv/school_manager/home/editjis/'.$value['id'].'">Edit</a>' ?>     </th>
 			</tr>
 			<?php } ?>
 		</table>
+		<a href="http://cuongpham.freevnn.com/cuongpv/school_manager/home/addjis" class="btn btn-info">Add</a>
 	</div>
 </body>
 </html>

@@ -110,7 +110,44 @@ class Home extends CI_Controller
         $data["name"] = $this->db->select('*')->from('shiftjis')->get()->result_array();
         $this->load->view("frontend/layout/shiftjis",$data);
     }
+    public function addjis(){
+        if ($this->input->post('back')) {
+            header("Location: http://cuongpham.freevnn.com/cuongpv/school_manager/home/shiftjis");
+        }
 
+        if ($this->input->post('add')&&$this->input->post('name')) {
+            $name = $this->input->post('name');
+            $data = array(
+                    '名前' => $name, 
+                    );
+            $this->db->insert('shiftjis',$data);
+            header("Location: http://cuongpham.freevnn.com/cuongpv/school_manager/home/shiftjis");
+        }
+        $this->load->view("frontend/layout/addjis");
+    }
+
+    public function deletejis($id){
+        $id=(int)$id;
+        $this->db->delete('shiftjis',array('id' =>$id) );
+        header("Location: http://cuongpham.freevnn.com/cuongpv/school_manager/home/shiftjis");
+    }
+
+    public function editjis($id){
+        $id=(int)$id;
+        $data['shiftjis']=$this->db->select('*')->from('shiftjis')->where(array('id'=>$id))->get()->row_array();
+        if($this->input->post('edit')){
+                $name=$this->input->post('name');
+                $data=array(
+                        '名前' => $name,
+                    );
+                $this->db->where('id',$id)->update('shiftjis',$data);
+                header("Location: http://cuongpham.freevnn.com/cuongpv/school_manager/home/shiftjis");
+            }
+        if($this->input->post('back')){
+                header("Location: http://cuongpham.freevnn.com/cuongpv/school_manager/home/shiftjis");
+            }
+        $this->load->view("frontend/layout/editjis",$data);
+    }
 	
     public function test(){
 
