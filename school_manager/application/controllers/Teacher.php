@@ -75,5 +75,11 @@ class Teacher extends CI_Controller
 			}
 		$this->load->view('frontend/layout/editteacher',$data);
 	}
+	
+	public function dslop(){
+		$data['lop'] = $data['giaovien']=$this->db->select('*')->from('giaovien')->order_by('lop asc')->get()->result_array();
+
+		$this->load->view('frontend/layout/dslop',$data);
+	}
 }
 ?>

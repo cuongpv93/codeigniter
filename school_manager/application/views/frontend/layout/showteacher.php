@@ -18,6 +18,13 @@
 </header>
 <section>
 <div class="container">
+<div class="dropdown">
+  <button class="btn btn-info btn-lg dropdown-toggle" type="button" data-toggle="dropdown">Menu</button>
+  <ul class="dropdown-menu">
+    <li><a href="http://cuongpham.freevnn.com/cuongpv/school_manager/giaovien/teacher">Thêm giáo viên</a></li>
+    <li><a href="http://cuongpham.freevnn.com/cuongpv/school_manager/giaovien/dslop">Thông tin lớp học</a></li>
+  </ul>
+</div>
 <h2> DANH SÁCH GIÁO VIÊN </h2>
 <table class="table table-bordered table-striped">
 <thead class="thead">
@@ -42,7 +49,6 @@
 	}
 	?>
 </table>
-<a class="btn btn-info" id = "back" href="http://localhost/cuongpv/school/giaovien/addteacher">Add</a>
 </div>
 </section>
 <footer>
